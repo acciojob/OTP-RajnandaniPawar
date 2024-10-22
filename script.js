@@ -5,9 +5,12 @@ window.onload = function() {
     // Iterate through the inputs to add event listeners
     codes.forEach((input, index) => {
         input.addEventListener('input', (e) => {
-            if (e.data >= 0 && e.data <= 9) {
+            if (e.data && e.data.charCodeAt(0) >= 48 && e.data.charCodeAt(0) <= 57) {
                 // If a number is typed, move to the next input
                 codes[index + 1]?.focus();
+            } else {
+                // If input is not a number, clear the input
+                input.value = '';
             }
         });
         input.addEventListener('keydown', (e) => {
