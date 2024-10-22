@@ -4,11 +4,14 @@ window.onload = function() {
 
     // Iterate through the inputs to add event listeners
     codes.forEach((input, index) => {
-        input.addEventListener('keyup', (e) => {
-            if (e.key >= 0 && e.key <= 9) {
+        input.addEventListener('input', (e) => {
+            if (e.data >= 0 && e.data <= 9) {
                 // If a number is typed, move to the next input
                 codes[index + 1]?.focus();
-            } else if (e.key === 'Backspace') {
+            }
+        });
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Backspace') {
                 // On backspace, move focus to the previous input
                 codes[index - 1]?.focus();
             }
