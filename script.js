@@ -7,10 +7,10 @@ window.onload = function() {
         input.addEventListener('keydown', (e) => {
             if (e.key >= 0 && e.key <= 9) {
                 // If a number is typed, move to the next input
-                setTimeout(() => codes[index + 1]?.focus(), 10);
+                setTimeout(() => codes[index + 1]?.focus(), 100);  // Increase delay to 100ms
             } else if (e.key === 'Backspace') {
                 // On backspace, move focus to the previous input
-                setTimeout(() => codes[index - 1]?.focus(), 10);
+                setTimeout(() => codes[index - 1]?.focus(), 100);  // Increase delay to 100ms
             }
         });
     });
